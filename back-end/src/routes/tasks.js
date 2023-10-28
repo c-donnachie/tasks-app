@@ -10,16 +10,16 @@ import {
 
 const router = Router()
 
-router.get("/task", getTasks)
+router.get("/tasks", getTasks)
 
-router.get("/task/count", getTaskCount)
+router.get("/tasks/count", getTaskCount)
 
-router.get("/task/:id", getTask)
+router.get("/tasks/:id", getTask)
 
-router.post("/task", saveTask)
+router.post("/tasks", saveTask)
 
-router.delete("/task/:id", deleteTask)
+router.delete("/tasks/:id", deleteTask)
 
-router.put("/task/:id", updateTask)
+router.put("/tasks/:id", updateTask)
 
 export default router
