@@ -3,7 +3,6 @@ import { connect } from "../database"
 export const getTasks = async (req, res) => {
   const connection = await connect()
   const [rows] = await connection.query("SELECT * FROM tasks")
-  console.log(rows)
   res.json(rows)
 }
 export const getTask = async (req, res) => {
@@ -35,10 +34,6 @@ export const deleteTask = async (req, res) => {
 }
 export const updateTask = async (req, res) => {
   const connection = await connect()
-  const results = await connection.query("UPDATE tasks SET ? WHERE id = ?", [
-    req.body,
-    req.params.id,
-  ])
-  console.log(results)
+  await connection.query("UPDATE tasks SET ? WHERE id = ?", [req.body, req.params.id])
   res.sendStatus(204)
 }

@@ -1,7 +1,11 @@
+import { config as dotenv } from "dotenv"
+
+dotenv()
+
 export const config = {
-  host: "localhost",
-  user: "donnachie",
-  password: "",
-  database: "tasksdb",
-  port: 8889,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT,
 }
